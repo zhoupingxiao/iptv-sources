@@ -26,7 +26,7 @@ jobs:
       - run: yarn install
       - run: yarn build
       - run: CLOSE_SOURCE_PROXY=true && yarn m3u
-      - run: yarn matrix
+     # - run: yarn matrix
 
       - name: "Jekyll theme"
         run: mv ./_config.temp.yml ./m3u/_config.yml
@@ -39,8 +39,8 @@ jobs:
           enable_jekyll: true
           cname: iptv.lepidus.me
 
-      - name: discord
-        uses: HerbertHe/discord-action@v1
-        with:
-          webhook: ${{ secrets.DISCORD_WEBHOOK }}
-          message: ${{ github.repository }} has been successfullly updated, see https://iptv.lepidus.me to get more.
+     # - name: discord
+     #   uses: HerbertHe/discord-action@v1
+     #   with:
+     #     webhook: ${{ secrets.DISCORD_WEBHOOK }}
+     #     message: ${{ github.repository }} has been successfullly updated, see https://iptv.lepidus.me to get more.
